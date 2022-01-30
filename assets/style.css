@@ -1,0 +1,12 @@
+.header-container {
+    margin-bottom: 1px;
+    border: navy;
+    border: solid;
+    height: 90px;
+}
+h1 {
+    text-align: center;
+}
+.suggestions {
+    display: block;
+}

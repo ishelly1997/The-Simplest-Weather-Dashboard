@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+  </head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Weather Dashboard</h1>
+        </div>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col-3">
+                <div class="search-container">
+                    <textarea></textarea>
+                    <form id="search-city"></form>
+                    <button type="button" id="search-btn">Search</button>
+                </div>
+                <div class="suggestions">
+                    <button type="button" class="btn btn-city">New York</button>
+                    <button type="button" class="btn btn-city">Los Angeles</button>
+                    <button type="button" class="btn btn-city">Chicago</button>
+                    <button type="button" class="btn btn-city">Atlanta</button>
+                    <button type="button" class="btn btn-city">Washington D.C.</button>
+                    <button type="button" class="btn btn-city">Denver</button>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="results-container">
+                    <div class="city-results">
+                        <div class="col-sm-8">col-sm-8</div>
+                        <div class="col-sm-4">col-sm-4</div>
+                      </div>
+                      <div class="5day">
+                        <div class="col-sm">col-sm</div>
+                        <div class="col-sm">col-sm</div>
+                        <div class="col-sm">col-sm</div>
+                        <div class="col-sm">col-sm</div>
+                        <div class="col-sm">col-sm</div>
+                      </div>
+            </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
