@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/style.css" />
   </head>
 <body>
@@ -16,7 +18,7 @@
         <div class="m-4 p-4">
             <div class="col-md-12">
                 <div class="row">
-                <div class="col-md-3">
+                <sidebar class="sidebar-sticky col-sm-3">
                  <div class="search-container">
                     <h2>Search:</h2>
                     <div class="input-group mb-3">
@@ -25,10 +27,11 @@
                 <ul class="list-group" id="history"></ul>   
                 </div>
                 </div>
+            </sidebar>
             </div>
             <div class="col-md-9">
                 <div class="results-container">
-                    <div class="row ml-2 border border-dark rounded">
+                    <div class="row ml-2 border border-dark">
                         <div class="col-sm-12" id="current-weather">
                             <h3 class="city-name" id="current-city">Current Weather</h3>
                             <p>Temperature:<span class="current" id="temperature"></span></p>
@@ -36,12 +39,41 @@
                             <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
                             <p>UV Index:<span class="current" id="UVindex"></span></p>
                         </div>
+
                       <div class="forecast" id="forecastContainer">
-                        <div class="col-sm day1"></div>
-                        <div class="col-sm day2"></div>
-                        <div class="col-sm day3"></div>
-                        <div class="col-sm day4"></div>
-                        <div class="col-sm day5"></div>
+                        <div class="col-sm day1">
+                            <h5 class="date-title font-weight-bold"></h5>
+                            <img id="forecastIcon" alt="Weather Forecast Icon">
+                            <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
+                            <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
+                            <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
+                          </div>
+                        </div>
+                        </div>
+                        <div class="col-sm day2">
+                            <img id="forecastIcon" alt="Weather Forecast Icon">
+                            <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
+                            <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
+                            <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
+                        </div>
+                        <div class="col-sm day3">
+                            <img id="forecastIcon" alt="Weather Forecast Icon">
+                            <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
+                            <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
+                            <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
+                        </div>
+                        <div class="col-sm day4">
+                            <img id="forecastIcon" alt="Weather Forecast Icon">
+                            <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
+                            <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
+                            <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
+                        </div>
+                        <div class="col-sm day5">
+                            <img id="forecastIcon" alt="Weather Forecast Icon">
+                            <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
+                            <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
+                            <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
+                        </div>
                       </div>
                 </div>
             </div>

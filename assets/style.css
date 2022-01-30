@@ -11,3 +11,7 @@ h1 {
     display:inline-block;
     position: absolute;
 }
+.forecast {
+    display: flex;
+    flex-wrap: wrap;
+}
