@@ -18,61 +18,66 @@
         <div class="m-4 p-4">
             <div class="col-md-12">
                 <div class="row">
-                <sidebar class="sidebar-sticky col-sm-3">
-                 <div class="search-container">
-                    <h2>Search:</h2>
-                    <div class="input-group mb-3">
+                    <sidebar class="sidebar-sticky col-sm-3">
+                     <div class="search-container">
+                      <h2>Search:</h2>
+                       <div class="input-group mb-3">
                         <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
                     <button type="button" id="search-btn">Search</button>
-                <ul class="list-group" id="history"></ul>   
-                </div>
-                </div>
-            </sidebar>
-            </div>
+                    <ul class="list-group" id="history"></ul>   
+                    </div>
+                    </div>
+                    </sidebar>
             <div class="col-md-9">
                 <div class="results-container">
                     <div class="row ml-2 border border-dark">
                         <div class="col-sm-12" id="current-weather">
-                            <h3 class="city-name" id="current-city">Current Weather</h3>
+                            <h2 class="city-name" id="current-city">Current Weather:</h2>
                             <p>Temperature:<span class="current" id="temperature"></span></p>
                             <p>Humidity:<span class="current" id="humidity"></span></p> 
                             <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
                             <p>UV Index:<span class="current" id="UVindex"></span></p>
                         </div>
-
+                    </div>
+                    <h2>5-Day Forecast:</h2>
+                    <div class="row">
                       <div class="forecast" id="forecastContainer">
-                        <div class="col-sm day1">
+                        <div class="col-sm border" id="day1">
                             <h5 class="date-title font-weight-bold"></h5>
                             <img id="forecastIcon" alt="Weather Forecast Icon">
                             <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
                             <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
                             <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
-                          </div>
                         </div>
-                        </div>
-                        <div class="col-sm day2">
+                        
+                        <div class="col-sm border" id="day2">
+                            <h5 class="date-title font-weight-bold"></h5>
                             <img id="forecastIcon" alt="Weather Forecast Icon">
                             <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
                             <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
                             <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
                         </div>
-                        <div class="col-sm day3">
+                        <div class="col-sm border" id="day3">
+                            <h5 class="date-title font-weight-bold"></h5>
                             <img id="forecastIcon" alt="Weather Forecast Icon">
                             <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
                             <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
                             <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
                         </div>
-                        <div class="col-sm day4">
+                        <div class="col-sm border" id="day4">
+                            <h5 class="date-title font-weight-bold"></h5>
                             <img id="forecastIcon" alt="Weather Forecast Icon">
                             <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
                             <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
                             <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
                         </div>
-                        <div class="col-sm day5">
+                        <div class="col-sm border" id="day5">
+                            <h5 class="date-title font-weight-bold"></h5>
                             <img id="forecastIcon" alt="Weather Forecast Icon">
                             <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
                             <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
                             <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
+                        </div>
                         </div>
                       </div>
                 </div>

@@ -6,6 +6,7 @@
 }
 h1 {
     text-align: center;
+    align-items: center;
 }
 .cities {
     display:inline-block;
@@ -13,5 +14,12 @@ h1 {
 }
 .forecast {
     display: flex;
-    flex-wrap: wrap;
+}
+h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+h3 {
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
