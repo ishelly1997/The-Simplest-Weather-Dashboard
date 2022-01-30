@@ -7,8 +7,7 @@
 h1 {
     text-align: center;
 }
-#btn-city {
-    display: block;
+.cities {
+    display:inline-block;
     position: absolute;
-    align-content: left;
 }

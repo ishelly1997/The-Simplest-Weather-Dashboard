@@ -13,24 +13,20 @@
         </div>
     </header>
     <main>
-        <div class="row">
-            <div class="col-3">
-                <div class="search-container">
+        <div class="m-4 p-4">
+            <div class="col-md-12">
+                <div class="row">
+                <div class="col-md-3">
+                 <div class="search-container">
                     <h2>Search:</h2>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
                     <button type="button" id="search-btn">Search</button>
+                <ul class="list-group" id="history"></ul>   
                 </div>
-                <div class="cities">
-                    <button type="button" class="btn btn-city">New York</button>
-                    <button type="button" class="btn btn-city">Los Angeles</button>
-                    <button type="button" class="btn btn-city">Chicago</button>
-                    <button type="button" class="btn btn-city">Atlanta</button>
-                    <button type="button" class="btn btn-city">Washington D.C.</button>
-                    <button type="button" class="btn btn-city">Denver</button>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-md-9">
                 <div class="results-container">
                     <div class="row ml-2 border border-dark rounded">
                         <div class="col-sm-12" id="current-weather">
@@ -40,17 +36,20 @@
                             <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
                             <p>UV Index:<span class="current" id="UVindex"></span></p>
                         </div>
-                      <div class="5day">
+                      <div class="forecast" id="forecastContainer">
                         <div class="col-sm day1"></div>
                         <div class="col-sm day2"></div>
                         <div class="col-sm day3"></div>
                         <div class="col-sm day4"></div>
                         <div class="col-sm day5"></div>
                       </div>
+                </div>
             </div>
+        </div>
+        </div>
+        </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/script.js"></script>
 </body>
