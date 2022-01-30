@@ -7,6 +7,8 @@
 h1 {
     text-align: center;
 }
-.suggestions {
+#btn-city {
     display: block;
+    position: absolute;
+    align-content: left;
 }

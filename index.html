@@ -16,11 +16,12 @@
         <div class="row">
             <div class="col-3">
                 <div class="search-container">
-                    <textarea></textarea>
-                    <form id="search-city"></form>
+                    <h2>Search:</h2>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
                     <button type="button" id="search-btn">Search</button>
                 </div>
-                <div class="suggestions">
+                <div class="cities">
                     <button type="button" class="btn btn-city">New York</button>
                     <button type="button" class="btn btn-city">Los Angeles</button>
                     <button type="button" class="btn btn-city">Chicago</button>
@@ -31,16 +32,20 @@
             </div>
             <div class="col-8">
                 <div class="results-container">
-                    <div class="city-results">
-                        <div class="col-sm-8">col-sm-8</div>
-                        <div class="col-sm-4">col-sm-4</div>
-                      </div>
+                    <div class="row ml-2 border border-dark rounded">
+                        <div class="col-sm-12" id="current-weather">
+                            <h3 class="city-name" id="current-city">Current Weather</h3>
+                            <p>Temperature:<span class="current" id="temperature"></span></p>
+                            <p>Humidity:<span class="current" id="humidity"></span></p> 
+                            <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
+                            <p>UV Index:<span class="current" id="UVindex"></span></p>
+                        </div>
                       <div class="5day">
-                        <div class="col-sm">col-sm</div>
-                        <div class="col-sm">col-sm</div>
-                        <div class="col-sm">col-sm</div>
-                        <div class="col-sm">col-sm</div>
-                        <div class="col-sm">col-sm</div>
+                        <div class="col-sm day1"></div>
+                        <div class="col-sm day2"></div>
+                        <div class="col-sm day3"></div>
+                        <div class="col-sm day4"></div>
+                        <div class="col-sm day5"></div>
                       </div>
             </div>
     </main>
