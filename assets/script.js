@@ -47,15 +47,13 @@ var getCurrentConditions = (event) => {
                 <li>Wind Speed: ${response.wind.speed} mph</li>
                 <li id="uvIndex">UV Index:</li>
             </ul>`;
-        // Append the results to the DOM
         $('#current-weather').html(currentWeatherHTML);
-        // Get the latitude and longitude for the UV search from Open Weather Maps API
         let latitude = response.coord.lat;
         let longitude = response.coord.lon;
         let uvQueryURL = "api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&APPID=" + apiKey;
-        // API solution for Cross-origin resource sharing (CORS) error: https://cors-anywhere.herokuapp.com/
+
         uvQueryURL = "https://cors-anywhere.herokuapp.com/" + uvQueryURL;
-        // Fetch the UV information and build the color display for the UV index
+
         fetch(uvQueryURL)
         .then(handleErrors)
         .then((response) => {
@@ -75,23 +73,23 @@ var getCurrentConditions = (event) => {
     })
 }
 
-// Function to obtain the five day forecast and display to HTML
+// Function 5day forecast and display to HTML
 var getFiveDayForecast = (event) => {
     let city = $('#search-city').val();
     // Set up URL for API search using forecast search
     let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial" + "&APPID=" + apiKey;
-    // Fetch from API
+
     fetch(queryURL)
         .then (handleErrors)
         .then((response) => {
             return response.json();
         })
         .then((response) => {
-        // HTML template
+
         let fiveDayForecastHTML = `
         <h2>5-Day Forecast:</h2>
         <div id="fiveDayForecastUl" class="d-inline-flex flex-wrap ">`;
-        // Loop over the 5 day forecast and build the template HTML using UTC offset and Open Weather Map icon
+        // Loop over the 5 day forecast 
         for (let i = 0; i < response.list.length; i++) {
             let dayData = response.list[i];
             let dayTimeUTC = dayData.dt;
@@ -99,7 +97,7 @@ var getFiveDayForecast = (event) => {
             let timeZoneOffsetHours = timeZoneOffset / 60 / 60;
             let thisMoment = moment.unix(dayTimeUTC).utc().utcOffset(timeZoneOffsetHours);
             let iconURL = "https://openweathermap.org/img/w/" + dayData.weather[0].icon + ".png";
-            // Only displaying mid-day forecasts
+
             if (thisMoment.format("HH:mm:ss") === "11:00:00" || thisMoment.format("HH:mm:ss") === "12:00:00" || thisMoment.format("HH:mm:ss") === "13:00:00") {
                 fiveDayForecastHTML += `
                 <div class="weather-card card m-2 p0">
@@ -113,17 +111,17 @@ var getFiveDayForecast = (event) => {
                 </div>`;
             }
         }
-        // Build the HTML template
+
         fiveDayForecastHTML += `</div>`;
-        // Append the five-day forecast to the DOM
+
         $('#five-day-forecast').html(fiveDayForecastHTML);
     })
 }
 
-// Function to save the city to localStorage
+//save the city
 var saveCity = (newCity) => {
     let cityExists = false;
-    // Check if City exists in local storage
+
     for (let i = 0; i < localStorage.length; i++) {
         if (localStorage["cities" + i] === newCity) {
             cityExists = true;
@@ -136,7 +134,7 @@ var saveCity = (newCity) => {
     }
 }
 
-// Render the list of searched cities
+
 var renderCities = () => {
     $('#city-results').empty();
     // If localStorage is empty
@@ -147,7 +145,7 @@ var renderCities = () => {
             $('#search-city').attr("value", "Austin");
         }
     } else {
-        // Build key of last city written to localStorage
+        // last city storage
         let lastCityKey="cities"+(localStorage.length-1);
         lastCity=localStorage.getItem(lastCityKey);
         // Set search input to last city searched
@@ -169,7 +167,6 @@ var renderCities = () => {
             // Append city to page
             $('#city-results').prepend(cityEl);
         }
-        // Add a "clear" button to page if there is a cities list
         if (localStorage.length>0){
             $('#clear-storage').html($('<a id="clear-storage" href="#">clear</a>'));
         } else {
