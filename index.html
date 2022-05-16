@@ -15,79 +15,39 @@
         </div>
     </header>
     <main>
-        <div class="m-4 p-4">
-            <div class="col-md-12">
-                <div class="row">
-                    <sidebar class="sidebar-sticky col-sm-3">
-                     <div class="search-container">
-                      <h2>Search:</h2>
-                       <div class="input-group mb-3">
-                        <input type="text" class="inputValue" id="search-city" aria-label="City Search" aria-describedby="search-button">
-                    <button type="button" id="search-btn">Search</button>
-                    <ul class="list-group" id="history"></ul>   
-                    </div>
-                    </div>
-                    </sidebar>
-            <div class="col-md-9">
-                <div class="results-container">
-                    <div class="row ml-2 border border-dark">
-                        <div class="col-sm-12" id="current-weather">
-                            <h2 class="font-weight-bold" id="current-city">Current Weather:</h2>
-                            <h3 class="font-weight-bold"><span class="city-date" id="current-date"></span></h3>
-                            <p class="font-weight-bold">Temperature:<span class="current" id="temperature"></span></p>
-                            <p class="font-weight-bold">Humidity:<span class="current" id="humidity"></span></p> 
-                            <p class="font-weight-bold">Wind Speed:<span class="current" id="wind-speed"></span></p>
-                            <p class="font-weight-bold">UV Index:<span class="current" id="UVindex"></span></p>
+        <div id="content" class="container">
+            <div class="row">
+    
+                <!-- Left side content with city search box and appended cities -->
+                <div id="content-left" class="col-md-3">
+                    <form>
+                        <label for="search-city">Search for a City:</label>
+                        <div class="form-row">
+                            <input id="search-city" class="form-control" name="city" value="Austin"></input>
+                            <!-- fontawesome magnifying glass -->
+                            <button id="search-button" class="btn btn-primary" type="submit">search<i class="fas fa-search"></i></button>
                         </div>
-                    </div>
-                    <h2>5-Day Forecast:</h2>
-                    <div class="row">
-                      <div class="forecast" id="forecastContainer">
-                        <div class="col-sm border" id="day1">
-                            <h5 class="date-title font-weight-bold"></h5>
-                            <img id="forecastIcon" alt="Weather Forecast Icon">
-                            <p class="font-weight-bold">Temperature: <span class="forecast" id="temp"></span></p>
-                            <p class="font-weight-bold">Humidity: <span class="forecast" id="humidity"></span></p>
-                            <p class="font-weight-bold">Wind Speed: <span class=forecast id="wind"></span></p>
-                        </div>
-                        
-                        <div class="col-sm border" id="day2">
-                            <h5 class="date-title font-weight-bold"></h5>
-                            <img id="forecastIcon" alt="Weather Forecast Icon">
-                            <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
-                            <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
-                            <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
-                        </div>
-                        <div class="col-sm border" id="day3">
-                            <h5 class="date-title font-weight-bold"></h5>
-                            <img id="forecastIcon" alt="Weather Forecast Icon">
-                            <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
-                            <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
-                            <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
-                        </div>
-                        <div class="col-sm border" id="day4">
-                            <h5 class="date-title font-weight-bold"></h5>
-                            <img id="forecastIcon" alt="Weather Forecast Icon">
-                            <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
-                            <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
-                            <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
-                        </div>
-                        <div class="col-sm border" id="day5">
-                            <h5 class="date-title font-weight-bold"></h5>
-                            <img id="forecastIcon" alt="Weather Forecast Icon">
-                            <p class="font-weight-bold">Temperature: <span id="tempForecast"></span></p>
-                            <p class="font-weight-bold">Humidity: <span id="humidityForecast"></span></p>
-                            <p class="font-weight-bold">Wind Speed: <span id="windForecast"></span></p>
-                        </div>
-                        </div>
-                      </div>
+                    </form>
+                    <div id="search-error"></div>
+                    <!-- list of prior searched cities -->
+                    <ul id="city-results" class="list-group mt-4"></ul>
+                    <!-- clear storage button -->
+                    <a id="clear-storage" href="#"></a>    
+                </div>
+    
+                <!-- Right side content showing current weather and five day forecast displays on search -->
+                <div id="content-right" class="col-md-9 pt-4">
+                    <!-- Current weather displayed on top -->
+                    <div id="current-weather" class="border rounded"></div>
+                    <!-- Five day forecast below the current weather -->
+                    <div id="five-day-forecast" class="mt-5"></div>
                 </div>
             </div>
-        </div>
-        </div>
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/script.js"></script>
 </body>
